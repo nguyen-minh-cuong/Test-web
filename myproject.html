@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head> 
+
+<style>
+   .time2{ background-color: rgb(112,128,144);
+   border:none;
+   border-radius: 6px ;
+   padding: 12px 7px 12px 7px ;
+   color: white;
+   font-size: 16px;
+   font-weight: bold;
+   
+   }
+   
+   .halt2{ border: none;
+   background-color: rgb(102,102,255); 
+   border-radius: 6px ;
+   padding: 6px 7px 6px 7px ;
+   color: white;
+   font-size: 14px;
+   font-weight: bold;
+   }
+   
+   .again{  border: none;
+   background-color: rgb(102,102,255); 
+   border-radius: 6px ;
+   padding: 6px 7px 6px 7px ;
+   color: white;
+   font-size: 14px;
+   font-weight: bold;
+   
+   }
+   
+ </style>
+
+
+</head>
+
+<body>
+
+  <button class= "time time2" 
+  onclick=" count(); "> Couting
+  </button>
+  
+    <button class= "halt halt2" 
+  onclick=" freeze();  "> Stop
+  </button>
+  
+   <button class= "again again2" 
+  onclick=" fromz();  "> Reset
+  </button>
+  
+  
+
+   <script> 
+   let x = document.querySelector('.time');
+   let y = 0;
+   let z = ''
+
+ function count() { x.innerHTML = y;
+  z =  setInterval( () => {y=y+1; x.innerHTML = y;}, 1000 ) ;
+ };
+ 
+ function freeze() { 
+  clearInterval(z)
+ z =''  } ;
+ 
+ function fromz() { 
+ 
+ freeze();
+ 
+ x.innerHTML = 'Counting';
+  y = 0;
+ 
+  }
+   
+ </script>
+ </body>
+</html>
+
+
+
